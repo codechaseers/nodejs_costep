@@ -8,7 +8,7 @@ let domy=require('./domy.js')
 // in array type of string we can not display founction directley
  
 domy.forEach(element => {
-    console.warn(element.grit());
+    console.log(element.grit());
 
     
 });
