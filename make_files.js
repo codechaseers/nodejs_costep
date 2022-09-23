@@ -18,6 +18,8 @@ fs.readdir(dir_path,(err,data)=>{
 
     data.forEach((items)=>{
         console.log(items);
+        
     })
+  
  
 })

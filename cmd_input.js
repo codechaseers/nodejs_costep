@@ -11,3 +11,6 @@ else if (input[2] == "remove") {
     fs.unlinkSync(input[3])
 
 }
+else{
+    console.log("out of choices");
+}
