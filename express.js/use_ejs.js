@@ -7,12 +7,12 @@ app.set('view engine','ejs')
 
 app.get('/profile',(req,resp)=>{
     
-    let employe={
-        name:"sudhanshu ",
-        email:"sudhanshu@gmail.com",
-        job:"developer"
-    }
-    resp.render('profile',{employe});
+    // let employe={
+    //     name:"sudhanshu ",
+    //     email:"sudhanshu@gmail.com",
+    //     job:"developer"
+    // }
+    resp.render('/express.js/views/profile');
 })
 // send the data dynamically using ejs 
 

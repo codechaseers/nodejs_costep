@@ -1,8 +1,9 @@
 let a = 40;
 let b = 10;
-let change = new Promise((resp, reject) => {
+ async function change(){ 
+    let changed =new Promise((resp, reject) => {
     setTimeout(() => {
-        b = 40
+        b = 30
         if (b === 30) {
 
             resp(30)
@@ -12,16 +13,22 @@ let change = new Promise((resp, reject) => {
         }
     }, 2000);
 })
+let new_b= await changed;
 
-change.then((b) => {
-    console.log(" >>>>>> ", a + b)
-})
-change.catch((err) => {
-    console.log(err+" b value not = to 30");
- 
-})
+console.log(" >>>>>> ", a + new_b)
+}
 
-
-
-
-console.log(" >>>>>> ", a + b)
+// change.then((b) => {
+    //     console.log(" >>>>>> ", a + b)
+    // })
+    // change.catch((err) => {
+        //     console.log(err+" b value not = to 30");
+        
+        // })
+        
+        // now i handel this using asynic awit  
+        
+        
+        console.log(" ////>>>>>> ", a + b)
+        change();
+console.log(" ////>>>>>> ")
