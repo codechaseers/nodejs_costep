@@ -7,4 +7,4 @@ resp.writeHead(200,{'content-type':'application\json'})
 resp.write(JSON.stringify(domy));
 resp.end()
 
-}).listen(80)
+}).listen(9000)

@@ -5,7 +5,7 @@ const fs = require('fs')
 
 const express = require('express')
 const app = express()
-app.get('', (req, resp) => {
+app.get('/', (req, resp) => {
    console.log(req.query.name);
    resp.send(`<h1> welcome,this is home page </h1> <a href="/about">go to about page</a>`)
 })

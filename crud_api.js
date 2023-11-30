@@ -3,7 +3,10 @@ const express = require('express');
 const { MongoClient } = require('mongodb');
 const url = 'mongodb://localhost:27017';
 const client = new MongoClient(url);
-const mo = require('mongodb')
+const mo = require('mongodb');
+const cors = require('cors');
+
+
 
 Dbconn = async () => {
     let resulet = await client.connect();
@@ -20,8 +23,10 @@ Dbconn = async () => {
 
 let app = express()
 app.use(express.json())
-// this function 
-app.get('/', async (req, resp) => {
+app.use(cors())
+// this function is use for get the json data  
+    
+app.get('/api', async (req, resp) => {
     let respond = await Dbconn();
     respond = await respond.find().toArray()
 
@@ -47,12 +52,12 @@ app.put('/:name', async (req, resp) => {
         { $set: req.body }
 
 
-    )
+//     )
 
-    resp.send({ status: "ook" })
-    // console.log(new_data);
+//     resp.send({ status: "ook" })
+//     // console.log(new_data);
 
-})
+// })
 // delete api 
 
 // app.delete('/',async (req,resp)=>{
@@ -62,12 +67,12 @@ app.put('/:name', async (req, resp) => {
 // console.log(dldata);
 // })
 
-app.delete('/:dl', async (req, resp) => {
-    let dldata = await Dbconn();
-    dldata = await dldata.deleteOne({ _id: new mo.ObjectId(req.params.dl) })
-    resp.send("deleted")
-    console.log(dldata);
-})
+// app.delete('/:dl', async (req, resp) => {
+//     let dldata = await Dbconn();
+//     dldata = await dldata.deleteOne({ _id: new mo.ObjectId(req.params.dl) })
+//     resp.send("deleted")
+//     console.log(dldata);
+// })
 
 
 app.listen(80)
